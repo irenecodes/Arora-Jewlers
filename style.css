@@ -631,23 +631,103 @@ h4 {
 
 
 @media (max-width: 320px) {
-    
+    html {
+        font-size:0.9rem;
+    }
+
+    .company-name {
+        margin-left: 20px;
+    }
+
+    header h1 {
+        font-size: 3.1rem;
+        margin-top: 20vh;
+    }
 
     .wrapper-mobile {
         max-width:280px;
         margin:0 auto;
     }
 
+    .hand-crafted p {
+        text-align: left;
+    }
+    /* NOTE: lorem text is different in desktop view than in mobile per Zeplin display */
 
 
-    header h1 {
-        font-size: 3rem;
-        margin-top: 10vh;
 
+    .hand-crafted a,
+    .sust-mix a {
+        /* width:140px; */
+        
+        padding:5px 10px;
+        width:100%;
+    }
+
+    h2,
+    .icons h3,
+    h4 {
+        font-size:1.5rem;
+    }
+
+    .hand-crafted a,
+    .sust-mix a, 
+    .sub-form button {
+        font-size:1.25rem;
+    }
+
+    .latest-collection-gallery-content h2 {
+        padding:50px 0 85px;
+    }
+
+    .gallery-contain {
+        width:calc(50% - 5px);
+    }
+
+    .gallery-contain:nth-child(1),
+    .gallery-contain:nth-child(2) {
+        margin:0 0 20px 0;
+    }
+
+    .catalogue-icon, 
+    .events-icon, 
+    .collaborations-icon {
+        padding: 20px 0;
+    }
+
+    .icons {
+        padding:50px 0;
+    }
+
+    .sust-mix-words {
+        padding:30px 0;
+    }
+
+    .footer-content nav a {
+        padding:0 20px 0 5px;
+        text-transform: capitalize;
+        font-size:1rem;
+    }
+
+    .sub-form p {
+        font-size:0.8rem;
+    }
+
+    .contact p,
+    .copyright {
+        font-size:0.7rem;
+    }
+
+    .footer-content .contact {
+        padding:0;
     }
 
 
+    .footer-content .sub-form input,
+    .sub-form button {
+        margin:0 0 10px 0;
+        width:100%;
+    }
 
-    
 
 }
