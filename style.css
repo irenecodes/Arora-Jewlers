@@ -22,7 +22,7 @@ fonts:
 /* base styles */
 html,
 header i {
-    font-family: font-family: 'Lato', sans-serif;
+    font-family:'Lato', sans-serif;
     font-weight:300;
     color:#fff;
     /* font-size:125%; Fatima advised to use size as shown on Zeplin*/
@@ -359,7 +359,7 @@ h4 {
 
 
 /* media queries */
-@media (max-width:1600px) {
+@media (max-width:1599px) {
     .sust-mix-words,
     .sust-mix-pic {
         width:100%;
@@ -380,7 +380,7 @@ h4 {
         display:inline;
     }
 
-    .sust-mix-words a {
+    .sust-mix-words .button {
         margin-left:calc(50vw - 165px);
     }
 
@@ -439,7 +439,7 @@ h4 {
     }
     
     .sub-form button {
-        font-family: 'Catamaran', sans-serif;
+        font-family: 'Italiana', serif;
         font-weight: 700;
     }
 
@@ -450,10 +450,7 @@ h4 {
 }
 
 @media (max-width:1170px) {
-    /* .hand-crafted-content-pic,
-    .hand-crafted-content a {
-        padding:50px 0;
-    } */
+
 
     .hand-crafted-content {
         padding: 50px 0;
@@ -462,57 +459,195 @@ h4 {
     .hand-crafted-content-pic,
     .hand-crafted-content-words {
         float:none;
+        width:100%;
     }
 
-     .hand-crafted-content-words {
-        width:100%;
-     }
 
     .hand-crafted-content-pic {
-        width:50%;
         margin:0 auto 50px;
+        padding-right:0px;
+        width:315px;
+        height:315px;
+
     }
 
-    .hand-crafted-content-words a {
-        margin-left:calc(50vw - 165px);
-        margin-top:50px;
-    }
 
-
-    .hand-crafted-content-words h2 {
+    .hand-crafted-content-words {
         text-align: center;
     }
 
 
-    
+    figure i {
+        color: #faba63;
+        font-size:3rem;
+    }
+
+    .icons h3 {
+        font-size: 1.5rem;
+    }
+
+
+
+    .catalogue-icon, 
+    .events-icon,
+    .collaborations-icon {
+        text-align:center;
+        float:none;
+        padding-bottom: 60px;
+    }
+
+    .sust-mix-words,
+    .sust-mix-pic {
+        height:auto;
+    }
+
 
 }
 
-@media (max-width:768px) {
-
-}
-
-@media (max-width:600px) {
+@media (max-width:974px) {
     header {
-        background-image: url(assets/mobile/fancycrave-174012-unsplash_2@2x.jpg);
+        background-image: url(assets/desktop/fancycrave-174012-unsplash.jpg);
         background-size: cover;
         min-height:100vh;
         width:100%;
         position:relative;
     }
+
+    h1 {
+        font-size: 6rem;
+    }
+
+    .header-links li {
+        padding:0px 50px;
+    }
+
+    .hand-crafted a,
+    .sust-mix-words .button {
+        display:block;
+        margin:0 auto;
+        width:200px;
+    }
+
+    .latest-collection-gallery-content {
+        padding:0;
+    }
+
+    .gallery-contain {
+        height:auto;
+    }
+
+    .footer-content .sub-form input,
+    .sub-form button {
+        width:80%;
+    }
+    
+    .sub-form button {
+        display:block;
+        margin:35px auto;
+        font-size:1.3rem;
+        
+    }
+
+    .gallery-contain {
+        margin: 40px;
+    }
+
 }
 
 
-@media (max-width:400px) {
-    .wrapper-mobile {
-        max-width:360px;
-    }
-    
-    header nav {
+@media (max-width:768px) {
+    header nav,
+    .social-media {
         visibility: hidden;
     }
 
     header svg {
         visibility: visible;
     }
+    
+    .latest-collection-gallery {
+        padding:0px;
+    }
+
+    .gallery-contain {
+        margin:40px;
+        width:calc(40% - 40px);
+    }
+
+    .gallery-contain:nth-child(2) {
+        float:right;
+    }
+
+
+
+    .sust-mix-words {
+        padding:40px;
+    } 
+
+    
+}
+
+@media (max-width:480px) {
+    header {
+        background-image: url(assets/mobile/fancycrave-174012-unsplash_2.jpg);
+        background-size: cover;
+        min-height:100vh;
+        width:100%;
+        position:relative;
+    }
+    
+    h1 {
+        font-size:3rem;
+        margin-top:30vh;
+    }
+
+    h2 {
+        font-size:1.5rem;
+    }
+
+    .company-name span:nth-child(2) {
+        font-size:1.2rem;
+    }
+
+    .hand-crafted-content {
+        margin-left:82.5px;
+        margin-right:82.5px;
+    }
+
+    .hand-crafted-content-pic,
+    .gallery-contain {
+        width: auto;
+    }
+
+
+    footer a {
+        font-size:0.9rem;
+    }
+
+    
+
+
+}
+
+
+@media (max-width: 320px) {
+    
+
+    .wrapper-mobile {
+        max-width:280px;
+        margin:0 auto;
+    }
+
+
+
+    header h1 {
+        font-size: 3rem;
+        margin-top: 10vh;
+
+    }
+
+
+
+    
+
 }
