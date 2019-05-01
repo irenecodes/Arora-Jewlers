@@ -126,7 +126,6 @@ header a {
 }
 
 .social-media ul {
-    /* text-align:right; */
     position:absolute;
     bottom:0;
     right:0;
@@ -212,7 +211,6 @@ figure i {
 }
 
 .icons {
-    /* padding: 85px 0; */
     line-height:3rem;
 
 }
@@ -237,7 +235,6 @@ figure i {
 .sust-mix-pic {
     width:50%;
     height:600px;
-    /* height:85vh; */
     overflow:hidden;
 }
 
@@ -281,7 +278,6 @@ h4 {
 
 .footer-content nav,
 .footer-content .contact {
-    /* width:350px; */
     width:25%;
 }
 
@@ -315,14 +311,12 @@ h4 {
 .sub-form input, 
 .sub-form button {
     padding: 10px 25px;
-    /* margin:0; */
 }
 
 .sub-form input {
     background-color: #fafafa;
     width:calc(60% - 50px);
     margin:0;
-    /* display:inline; */
 }
 
 .sub-form button {
@@ -610,11 +604,21 @@ h4 {
     }
 
     .hand-crafted-content {
-        margin-left:82.5px;
-        margin-right:82.5px;
+        margin:0 20px;
     }
 
-    .hand-crafted-content-pic,
+    .hand-crafted-content-pic {
+        width:250px;
+        margin:0 auto 20px;
+        /* trouble resizing and maintaining aspect-ratio like Zeplin file */
+    }
+
+    .hand-crafted p {
+        text-align: left;
+    }
+    /* NOTE: lorem text is different in desktop view than in mobile per Zeplin display */
+
+
     .gallery-contain {
         width: auto;
     }
@@ -624,24 +628,19 @@ h4 {
         font-size:0.9rem;
     }
 
-    
-
-
 }
 
 
 @media (max-width: 320px) {
-    html {
-        font-size:0.9rem;
+    html,
+    .footer-content nav a {
+        font-size:1rem;
     }
 
-    .company-name {
-        margin-left: 20px;
-    }
-
-    header h1 {
-        font-size: 3.1rem;
-        margin-top: 20vh;
+    header {
+        background: url(assets/mobile/fancycrave-174012-unsplash_2.jpg) no-repeat fixed;
+        background-size: cover;
+        /* having trouble w/ background-size:contain and removing white space at bottom */
     }
 
     .wrapper-mobile {
@@ -649,19 +648,24 @@ h4 {
         margin:0 auto;
     }
 
-    .hand-crafted p {
-        text-align: left;
+    .company-name {
+        margin-left: 20px;
     }
-    /* NOTE: lorem text is different in desktop view than in mobile per Zeplin display */
 
+    .company-name span:nth-child(2) {
+        font-size:0.85rem;
+    }
+
+    header h1 {
+        font-size: 3.1rem;
+        margin-top: 20vh;
+    }
 
 
     .hand-crafted a,
-    .sust-mix a {
-        /* width:140px; */
-        
-        padding:5px 10px;
-        width:100%;
+    .sust-mix-words .button {
+        padding:10px;
+        width:50%;
     }
 
     h2,
@@ -706,7 +710,6 @@ h4 {
     .footer-content nav a {
         padding:0 20px 0 5px;
         text-transform: capitalize;
-        font-size:1rem;
     }
 
     .sub-form p {
