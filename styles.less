@@ -24,7 +24,9 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 // media queries
 @mobile: ~"only screen and (min-width: 320px) and (max-width: 479px)";
 
-@mid-size: ~"only screen and (min-width: 397px)";
+@break-bg: ~"only screen and (min-width: 397px)";
+
+@break-company-name: ~"only screen and (min-width: 500px)";
 
 @tablet: ~"only screen and (min-width: 768px)";
 
@@ -108,10 +110,10 @@ h2 {
 
 // header styles 
 header {
-    background: #000 url(./assets/mobile/header-bg.jpg);
+    background: #000 url(./assets/mobile/header-bg.jpg) no-repeat;
     height: 100vh;
-    background-repeat: no-repeat;
-    @media @mid-size {
+    background-size: cover;
+    @media @break-bg {
         background: #000 url(./assets/desktop/fancycrave-174012-unsplash.jpg);
         position: relative;
     }
@@ -123,8 +125,8 @@ header {
 
 header nav {
     display: none;
-    background: @yellow;
-    position: absolute;
+    background: #faba63fa;
+    position: fixed;
     right:0;
     left:50%;
     bottom:0;
@@ -137,6 +139,7 @@ header nav {
     }
     a {
         color: @black;
+        font-size: 1.2rem;
         &:hover {
             text-decoration: underline;
         }
@@ -144,6 +147,10 @@ header nav {
 
     @media @tablet {
         display: block;
+        background: transparent;
+        position: relative;
+        left: -50%;
+        
         li {
             display: inline-block;
             color: @yellow;
@@ -158,6 +165,9 @@ header nav {
                 text-decoration: underline;
             }
         }
+    }
+    @media @desktop {
+        left: -65%;
     }
 }
 
@@ -186,9 +196,9 @@ header nav {
 }
 
 .hamburger {
-    height: 50px;
+    height: 42px;
     width: 50px;
-    position: absolute;
+    position: fixed;
     right: 15px;
     top: 15px;
     z-index: 100;
@@ -213,7 +223,7 @@ header nav {
         }
     }
     &.openNav .top {
-        transform: translateY(22px) translateX(0) rotate(45deg);
+        transform: translateY(11px) translateX(0) rotate(45deg);
         background: @black;
     }
     &.openNav .middle {
@@ -221,7 +231,7 @@ header nav {
         background: @black;
     }
     &.openNav .bottom {
-        transform: translateY(0px) translateX(0) rotate(-45deg);
+        transform: translateY(-11px) translateX(0) rotate(-45deg);
         background: @black;
     }
 
@@ -240,12 +250,12 @@ header nav {
     width: 50%;
     text-align: right;
     @media @tablet {
-        margin-top: 10vh;
+        margin-top: 20vh;
     }
     h1 {
         font-family: @headerButtonFF;
         font-size: 2.5rem;
-        @media @tablet {
+        @media @break-company-name {
             font-size: 3.5rem;
         }
         @media @desktop {
@@ -424,34 +434,40 @@ figure {
     }
     div {
         @media @tablet {
-            width: 50%;
+            max-height: 25%;
         }
         @media @desktop {
+            width: 50%;
+        }
+        @media @XLdesktop {
             height: 500px;
             overflow: hidden;
         }
     }
     .sust-mix-pic-right {
         @media @tablet {
-            float: right;
-            margin-top: 15%;
+            margin-bottom: 10%;
         }
         @media @desktop {
-            margin-top: 0;
+            margin-top: 10%;
+            float: right;
+        }
+        @media @XLdesktop {
+            margin: 0;
         }
     }
     .sust-mix-pic-left {
         @media @tablet {
-            float: left;
             margin-bottom: 10%;
         }
         @media @desktop {
+            float: left;
             margin-bottom: 0;
         }
     }
     .sust-mix-words {
         @media @desktop {
-            padding:70px;
+            padding:40px;
         }
         &:last-child {
             @media @tablet {
@@ -528,7 +544,7 @@ footer {
             }
         }
         @media @desktop {
-            width: 50%;
+            width: 45%;
             float:left;
             padding: 50px 0;
         }
@@ -548,4 +564,7 @@ footer {
     background: @accent;
     text-align: center;
     padding: 20px;
+    a {
+        text-decoration: underline;
+    }
 }
