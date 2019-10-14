@@ -638,9 +638,21 @@ h4 {
     }
 
     header {
-        background: url(assets/mobile/fancycrave-174012-unsplash_2.jpg) no-repeat fixed;
-        background-size: cover;
+
         /* having trouble w/ background-size:contain and removing white space at bottom */
+
+        background-image:url(assets/mobile/fancycrave-174012-unsplash_2.jpg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position:100% 100%;
+        /* min-height:400px; */
+        min-height:600px;
+
+
+        /* CORRECT (I NEED TO MAKE A DESIGN DECISION AT 320PX BC ONLY GIVEN FOR 400PX per Mentor: Jenny May 2 2019: */
+        background-size:cover;
+        background-position: 23% 50%;
+        min-height:80vh;
     }
 
     .wrapper-mobile {

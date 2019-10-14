@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Irene Truong Project 1</title>
+    <title>Arora Jewlers</title>
 
 <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Catamaran:700|Cormorant+Garamond:600|Italiana|Lato:300|Roboto"
@@ -14,28 +14,30 @@
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
 <!-- link to css external sheet -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
     
 
 </head>
 
 <body>
+    <a href='#main' class= 'skip-link' >Skip to main content.</a>
+    
     <header>
         <div class = "wrapper">
-            <nav class="header-links">
+            <nav>
                 <ul class="clearfix">
-                    <li><a href="#home">home</a></li>
-                    <li><a href="#about">about</a></li>
-                    <li><a href="#blog">blog</a></li>
+                    <li><a href="#">home</a></li>
+                    <li><a href="#">about</a></li>
+                    <li><a href="#">blog</a></li>
                     <li><a href="#contact">contact</a></li>
                 </ul>
             </nav>
-<!-- from asset folder for mobile -->
-            <svg xmlns="http://www.w3.org/2000/svg" width="42" height="23" viewBox="0 0 42 23">
-                <g fill="none" fill-rule="nonzero" stroke="#FCFCFC" stroke-linecap="round" stroke-width="3">
-                    <path d="M1.513 1.5h38.974M1.513 11.5h38.974M1.513 21.5h38.974" />
-                </g>
-            </svg>
+
+            <div class="hamburger">
+                <span class="top"></span>
+                <span class="middle"></span>
+                <span class="bottom"></span>
+            </div>
 
             
 
@@ -43,9 +45,7 @@
                 <h1>-Aro-
                     <span>ra</span>
                     <span>jewlers</span>
-                </h1>       
-                <!-- spoke to Jenny who recommended to put entire company name as H1 to allow screenreader to read all at once -->
-                
+                </h1>        
             </div>
 
 
@@ -54,25 +54,25 @@
         <div class="social-media">
             <ul>
                 <li>
-                    <a href="https://www.instagram.com/placeholder" aria-label="Go to -Aro-ra Jewlers's Instagram page.">
+                    <a href="https://www.instagram.com/placeholder" target="_blank" aria-label="Go to Arora Jewlers's Instagram page.">
                     <i aria-hidden="true" class="fab fa-instagram"></i>
                     </a>
                 </li>
 
                 <li>
-                    <a href="https://www.facebook.com/placeholder" aria-label="Go to -Aro-ra Jewlers's Facebook page.">
+                    <a href="https://www.facebook.com/placeholder" target="_blank" aria-label="Go to Arora Jewlers's Facebook page.">
                         <i aria-hidden="true" class="fab fa-facebook-f"></i>
                     </a>
                 </li>
 
                 <li>
-                    <a href="https://www.snapchat.com/placeholder" aria-label="Go to -Aro-ra Jewlers's Snapchat page.">
+                    <a href="https://www.snapchat.com/placeholder" target="_blank"aria-label="Go to Arora Jewlers's Snapchat page.">
                         <i aria-hidden="true" class="fab fa-snapchat-ghost"></i>
                     </a>
                 </li>
                 
                 <li>
-                    <a href="https://www.twitter.com/placeholder" aria-label="Go to -Aro-ra Jewlers's Twitter page.">
+                    <a href="https://www.twitter.com/placeholder" target="_blank"aria-label="Go to Arora Jewlers's Twitter page.">
                         <i aria-hidden="true" class="fab fa-twitter"></i>
                     </a>
                 </li>
@@ -82,9 +82,9 @@
 
     </header>
 
-    <main>
+    <main id="main">
         <section class = "hand-crafted">
-            <div class="hand-crafted-content wrapper clearfix wrapper-mobile">
+            <div class="wrapper clearfix">
                 <div class="hand-crafted-content-pic">
                     <img src="assets/desktop/image-6.jpg" alt="Our jewlry maker Maria X hand-crafting a custom-designed ring.">
                 </div>
@@ -96,14 +96,14 @@
                     vestibulum felis pharetra luctus. Quisque interdum orci quis convallis dapibus nulla pulvinar tortor.Lorem ipsum dolor
                     sit amet, consectetur adipiscing elit. Nulla pulvinar tortor nulla el. Lorem ipsum dolor sit amet, consectetur
                     adipiscing elit. Nulla pulvinar tortor nulla elementum eleifend.</p>
-                    <div><a href="#read-more-link" class = "button">read more</a></div>
+                    <div class="button-container"><a href="#" class = "read-more">read more</a></div>
                 </div>
             </div>
 
         </section>  <!-- section hand-crafted ends -->
 
         <section class = "latest-collection-gallery">
-            <div class="latest-collection-gallery-content wrapper wrapper-mobile clearfix">
+            <div class="wrapper clearfix">
                 <h2>latest collection</h2>
                 <div>
                     <div class="gallery-contain">
@@ -121,68 +121,52 @@
         </section> <!-- section latest collection gallery ends -->
 
         <figure class="clearfix"> 
-            <div class="icons wrapper wrapper-mobile">
-                <div class="catalogue-icon">
-                    
+            <div class="what-we-do wrapper">
+                <div>
                     <i class="far fa-images" aria-hidden="true"></i>
                     <h3>catalogue</h3>
-
                 </div>
 
-                <div class="events-icon">
-                    
+                <div>   
                     <i class="far fa-calendar-alt" aria-hidden="true"></i>
                     <h3>events</h3>
-
                 </div>
 
-                <div class="collaborations-icon">
-                    
+                <div>
                     <i class="far fa-handshake" aria-hidden="true"></i>
                     <h3>collaborations</h3>
 
                 </div>
-            </div>  <!-- .icons ends -->
+            </div>  <!-- icons ends -->
 
         </figure>
 
         <section class="sust-mix clearfix">
-            
             <div class="sust-mix-pic sust-mix-pic-right">
                 <img src="assets/desktop/image-2.jpg" alt="Our Multi-Ring Necklace displayed on a person's neck.">
             </div>
-
-            <div class="sust-mix-words wrapper-mobile">
-                <h2>Sustainable <span></span>materials</span></h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pulvinar tortor a elementum eleifend. Vestibulum
+            <div class="sust-mix-words">
+                <h2 class="wrapper">Sustainable materials</h2>
+                <p class="wrapper">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pulvinar tortor a elementum eleifend. Vestibulum
                 consequat vestibulum felis pharetra luctus. Quisque interdum orci quis convallis dapibus. Vestibulum vitae tincidunt
                 sem, a blandit sem. Quisque interdum orci.</p>
-                <div><a href="#read-more-link" class="button">read more</a></div>
+                <div class="button-container"><a href="#" class="read-more">read more</a></div>
             </div>
-            
-
-        
-
             <div class="sust-mix-pic sust-mix-pic-left">
                 <img src="assets/desktop/image-2-copy.jpg" alt="Opal ring and watch displayed on hand model.">
             </div>
-
-            
-
-            <div class="sust-mix-words wrapper-mobile">
+            <div class="sust-mix-words">
                 <h2>Mix & Match</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pulvinar tortor a elementum eleifend. Vestibulum
+                <p class="wrapper">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pulvinar tortor a elementum eleifend. Vestibulum
                 consequat vestibulum felis pharetra luctus. Quisque interdum orci quis convallis dapibus. Vestibulum vitae tincidunt
                 sem, a blandit sem. Quisque interdum orci.</p>
-                <div><a href="#read-more-link" class="button">read more</a></div>
+                <div class="button-container"><a href="#" class="read-more">read more</a></div>
             </div>
-            
         </section> <!-- section .sust-mix-pic ends -->
-
     </main>
 
     <footer>
-        <div class="footer-content wrapper wrapper-mobile clearfix">
+        <div class="wrapper clearfix">
             <nav>
                 <ul>
                     <li><a href="#home">home</a></li>
@@ -204,7 +188,7 @@
                 </form>
             </div>
 
-            <div class="contact">
+            <div id="contact">
                 <h4>contact</h4>
                 <p>info@email.com | 123 - 456 - 7890
                 <span>123 some road, Toronto, ON</span>
@@ -217,5 +201,14 @@
             </p>
         </div>
     </footer>
+    
+    <!-- jQuery link -->
+    <script src='https://code.jquery.com/jquery-3.2.1.min.js'
+        integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=' crossorigin='anonymous'></script>
+    <!-- smooth scroll -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/2.2.0/jquery.smooth-scroll.min.js"></script>
+
+    <!-- link to js file -->
+    <script src="scripts.js"></script>
 </body>
 </html>

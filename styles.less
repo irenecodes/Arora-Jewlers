@@ -1,0 +1,551 @@
+article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary{display:block;}audio,canvas,video{display:inline-block;}audio:not([controls]){display:none;height:0;}[hidden]{display:none;}html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}a:focus{outline:thin dotted;}a:active,a:hover{outline:0;}h1{font-size:2em;}abbr[title]{border-bottom:1px dotted;}b,strong{font-weight:700;}dfn{font-style:italic;}mark{background:#ff0;color:#000;}code,kbd,pre,samp{font-family:monospace, serif;font-size:1em;}pre{white-space:pre-wrap;word-wrap:break-word;}q{quotes:\201C \201D \2018 \2019;}small{font-size:80%;}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}sup{top:-.5em;}sub{bottom:-.25em;}img{border:0;}svg:not(:root){overflow:hidden;}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em;}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0;}button,input{line-height:normal;}button,html input[type=button],/* 1 */input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}button[disabled],input[disabled]{cursor:default;}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0;}input[type=search]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box;}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none;}textarea{overflow:auto;vertical-align:top;}table{border-collapse:collapse;border-spacing:0;}body,figure{margin:0;}legend,button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0;}
+
+.clearfix:after {visibility: hidden; display: block; font-size: 0; content: ''; clear: both; height: 0; }
+
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+.visuallyHidden:not(:focus):not(:active) { position: absolute; width: 1px; height: 1px; margin: -1px;border: 0;padding: 0;white-space: nowrap;clip-path: inset(100%);clip: rect(00 0 0);overflow: hidden;}
+
+// variables
+
+// font-families 
+@roboto: 'Roboto', sans-serif;
+@buttonFF: 'Cormorant Garamond', serif;
+@headerButtonFF: 'Italiana', serif;
+@bodyFF: 'Lato', sans-serif;
+
+// colors
+@white: #fff;
+@black: #14171f;
+@yellow: #faba63;
+@accent: #201e1f;
+
+
+// media queries
+@mobile: ~"only screen and (min-width: 320px) and (max-width: 479px)";
+
+@mid-size: ~"only screen and (min-width: 397px)";
+
+@tablet: ~"only screen and (min-width: 768px)";
+
+@desktop: ~"only screen and (min-width: 960px)";
+
+@XLdesktop: ~"only screen and (min-width: 1280px)";
+
+// stripping styles
+*{
+    padding:0;
+    margin:0;
+    line-height:1.6;
+}
+
+html {
+    font-size: 125%;
+    font-family: @bodyFF;
+    color: @white;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    display:block;
+    width:100%;
+    max-width: 100%;
+}
+
+.wrapper {
+    max-width:1280px;
+    width:90%;
+    margin: 0 auto;
+}
+
+.skip-link {
+    position: absolute;
+    left: -1000px;
+    top: 5px;
+    z-index: 999;
+    background: black;
+    color: white;
+}
+
+.skip-link:focus {
+    left:0;
+}
+
+body {
+    font-family: @bodyFF;
+    font-weight:300;
+    color:#fff;
+    // /* font-size:125%; Fatima advised to use size as shown on Zeplin*/
+    font-size:20px;
+}
+
+h1,
+h2,
+h3,
+h4,
+.read-more {
+    font-family: @headerButtonFF;
+    text-transform: uppercase;
+    margin:0;
+}
+
+h2 {
+    @media @tablet {
+        font-size: 1.7rem
+    }
+    @media @desktop {
+        font-size: 2.55rem;
+    }
+}
+
+
+// header styles 
+header {
+    background: #000 url(./assets/mobile/header-bg.jpg);
+    height: 100vh;
+    background-repeat: no-repeat;
+    @media @mid-size {
+        background: #000 url(./assets/desktop/fancycrave-174012-unsplash.jpg);
+        position: relative;
+    }
+    @media @desktop {
+        background: #000 url(./assets/desktop/bg.jpg);
+        background-size: cover;
+    }
+}
+
+header nav {
+    display: none;
+    background: @yellow;
+    position: absolute;
+    right:0;
+    left:50%;
+    bottom:0;
+    top:0;
+    ul {
+        position:absolute;
+        top: 25%;
+        right: 25px;
+        text-align: right;
+    }
+    a {
+        color: @black;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    @media @tablet {
+        display: block;
+        li {
+            display: inline-block;
+            color: @yellow;
+            margin: 20px 30px 20px 0;
+            text-transform: capitalize;
+        }
+        a {
+            color: @yellow;
+            transition: all ease 0.3s;
+            &:hover,
+            &:focus {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.social-media {
+    display: none;
+    @media @tablet {
+        display: block;
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        font-size: 1.2rem;
+        a {
+            color: @white;
+            padding: 3px 6px;
+            margin-bottom: 5px;
+            transition: all ease 0.3s;
+            &:hover,
+            &:focus {
+                color: @yellow;
+            }
+        }
+        li {
+            text-align: center;
+        }
+    }
+}
+
+.hamburger {
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    z-index: 100;
+    background: rgba(254,254,254,0.8);
+    span {
+        background: @black;
+        width: 34px;
+        height: 3px;
+        margin: 8px;
+        position: absolute;
+        left: 0;
+        transition: all 0.3s ease;
+        &.top {
+            top: 0;
+            
+        }
+        &.middle {
+            top:11px;
+        }
+        &.bottom {
+            top: 22px;
+        }
+    }
+    &.openNav .top {
+        transform: translateY(22px) translateX(0) rotate(45deg);
+        background: @black;
+    }
+    &.openNav .middle {
+        opacity: 0;
+        background: @black;
+    }
+    &.openNav .bottom {
+        transform: translateY(0px) translateX(0) rotate(-45deg);
+        background: @black;
+    }
+
+    @media @tablet {
+        display: none;
+    }
+}
+
+.show {
+    display: block;
+}
+
+.company-name {
+    margin-top: 30vh;
+    float: left;
+    width: 50%;
+    text-align: right;
+    @media @tablet {
+        margin-top: 10vh;
+    }
+    h1 {
+        font-family: @headerButtonFF;
+        font-size: 2.5rem;
+        @media @tablet {
+            font-size: 3.5rem;
+        }
+        @media @desktop {
+            font-size: 6rem;
+        }
+    }
+    span {
+        display: block;
+    }
+    span:nth-child(2) {
+        font-family: 'Lato', sans-serif;
+        color: #faba63;
+        text-transform: lowercase;
+        font-size: 0.8rem;
+        @media @tablet {
+            font-size: 2rem;
+        }
+    }
+}
+
+// handcrafted styles
+.hand-crafted {
+    background: @black;
+    padding: 50px 0;
+    h2 {
+        text-align: center;
+        margin-bottom: 15px;
+        @media @desktop {
+            text-align: left;
+        }
+    }
+    .hand-crafted-content-pic {
+        margin-bottom: 30px;
+        @media @tablet {
+            width: 28%;
+            float: left;
+        }
+    }
+    .hand-crafted-content-words {
+        @media @tablet {
+            width: 70%;
+            float: right;
+        }
+    }
+    p{
+        margin-bottom: 10px;
+    }
+    .read-more {
+        border: 2px solid @yellow;
+        padding: 5px;
+        color: @white;
+        margin: 0 auto;
+        text-transform: uppercase;
+        transition: all ease 0.3s;
+        &:hover,
+        &:focus {
+            background: @yellow;
+            color: #000;
+        }
+        @media @desktop {
+            padding:10px;
+        }
+    }
+    .button-container {
+        text-align: center;
+        font-family: @headerButtonFF;
+        @media @desktop {
+            text-align: left;
+            margin-top: 20px;
+        }
+    }
+}
+
+.latest-collection-gallery {
+    padding: 50px 0;
+    background: @accent;
+    h2 {
+        text-align: center;
+        margin-bottom: 100px;
+    }
+    .gallery-contain {
+        width: calc(98% / 2);
+        float: left;
+        @media @desktop {
+            width: calc(90% / 3)
+        }
+        &:first-child{
+            margin-right: 2%;
+            @media @desktop {
+                margin-right: 5%;
+            }
+        }
+        &:last-child {
+            display: none;
+            @media @desktop {
+                display: block;
+                margin-left: 5%;
+            }
+        }
+    }
+}
+
+figure {
+    background: @black;
+}
+
+.what-we-do div {
+    text-align: center;
+    padding: 20px 0;
+    &:first-child {
+        padding-top: 50px;
+    }
+    &:last-child {
+        padding-bottom: 50px;
+        @media @tablet {
+            padding-bottom: 0;
+        }
+    }
+    i {
+        color: @yellow;
+        font-size: 2.5rem;
+    }
+    @media @tablet {
+        float: left;
+        width: calc(100% / 3);
+        padding: 50px 0;
+    }
+}
+
+.sust-mix {
+    background: @accent;
+    h2 {
+        text-align: center;
+        padding: 20px 0;
+        @media @desktop {
+            text-align: left;
+        }
+    }
+    h2.wrapper,
+    p.wrapper {
+        @media @desktop {
+            width:100%;
+        }
+    }
+    p{
+        margin-bottom: 30px;
+    }
+    .read-more {
+        border: 2px solid @yellow;
+        padding: 5px;
+        color: @white;
+        margin: 0 auto;
+        text-transform: uppercase;
+        transition: all ease 0.3s;
+        &:hover,
+        &:focus {
+            background: @yellow;
+            color: #000;
+        }
+        @media @desktop {
+            padding:10px;
+        }
+    }
+    .button-container {
+        text-align: center;
+        font-family: @headerButtonFF;
+        padding-bottom: 50px;
+        @media @tablet {
+            margin: 0 auto;
+            overflow:visible;
+        }
+        @media @desktop {
+            margin: 0;
+            text-align: left;
+        }
+    }
+    div {
+        @media @tablet {
+            width: 50%;
+        }
+        @media @desktop {
+            height: 500px;
+            overflow: hidden;
+        }
+    }
+    .sust-mix-pic-right {
+        @media @tablet {
+            float: right;
+            margin-top: 15%;
+        }
+        @media @desktop {
+            margin-top: 0;
+        }
+    }
+    .sust-mix-pic-left {
+        @media @tablet {
+            float: left;
+            margin-bottom: 10%;
+        }
+        @media @desktop {
+            margin-bottom: 0;
+        }
+    }
+    .sust-mix-words {
+        @media @desktop {
+            padding:70px;
+        }
+        &:last-child {
+            @media @tablet {
+                float: right;
+            }
+        }
+    }
+}
+
+footer {
+    background: @black;
+    nav {
+        font-family: @bodyFF;
+        padding: 50px 0;
+        @media @desktop {
+            width: 25%;
+            float: left;
+            font-family: @headerButtonFF;
+        }
+    }
+    a {
+        color: #fafafa;
+        text-transform: capitalize;
+        transition: all ease 0.3s;
+        &:hover,
+        &:focus {
+            text-decoration: underline;
+        }
+    }
+    li {
+        display: inline;
+        margin-right: 15px;
+        @media @desktop {
+            display: block;
+        }
+    }
+    h4 {
+        margin-bottom: 20px;
+        @media @desktop {
+            font-size: 1.2rem;
+        }
+    }
+    .sub-form {
+        text-align: center;
+        p {
+            margin-bottom: 10px;
+        }
+        input,
+        button {
+            width: 100%;
+            padding: 10px 25px;
+            text-align: center;
+        }
+        input {
+            @media @desktop {
+                width: 70%;
+                float: left;
+            }
+        }
+        button {
+            margin-top: 10px;
+            background: black;
+            color: @white;
+            text-transform: capitalize; 
+            border: black 3px solid;
+            transition: all ease 0.3s;
+            &:hover, 
+            &:focus {
+                border: inset @white 3px;
+            }
+            @media @desktop {
+                margin-top: 0;
+                width: 30%;
+            }
+        }
+        @media @desktop {
+            width: 50%;
+            float:left;
+            padding: 50px 0;
+        }
+    }
+}
+
+#contact {
+    padding: 50px 0;
+    text-align: center;
+    @media @desktop {
+        width: 25%;
+        float:right;
+        text-align: right;
+    }
+}
+.copyright {
+    background: @accent;
+    text-align: center;
+    padding: 20px;
+}
