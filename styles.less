@@ -34,6 +34,9 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 
 @XLdesktop: ~"only screen and (min-width: 1280px)";
 
+@XXLdesktop: ~"only screen and (min-width: 1400px)";
+// *desktop conversion follows at 1400px 
+
 // stripping styles
 *{
     padding:0;
@@ -84,7 +87,6 @@ body {
     font-family: @bodyFF;
     font-weight:300;
     color:#fff;
-    // /* font-size:125%; Fatima advised to use size as shown on Zeplin*/
     font-size:20px;
 }
 
@@ -97,6 +99,7 @@ h4,
     text-transform: uppercase;
     margin:0;
 }
+
 
 h2 {
     @media @tablet {
@@ -149,7 +152,7 @@ header nav {
         display: block;
         background: transparent;
         position: relative;
-        left: -50%;
+        left: -42%;
         
         li {
             display: inline-block;
@@ -167,7 +170,10 @@ header nav {
         }
     }
     @media @desktop {
-        left: -65%;
+        left: -56%;
+    }
+    @media @XXLdesktop {
+        left: -68%;
     }
 }
 
@@ -438,6 +444,7 @@ figure {
         }
         @media @desktop {
             width: 50%;
+            float: left;
         }
         @media @XLdesktop {
             height: 500px;
@@ -446,32 +453,40 @@ figure {
     }
     .sust-mix-pic-right {
         @media @tablet {
-            margin-bottom: 10%;
+            // margin-bottom: 10%;
         }
         @media @desktop {
-            margin-top: 10%;
+            // margin-top: 10%;
             float: right;
         }
         @media @XLdesktop {
-            margin: 0;
+            // margin: 0;
         }
     }
     .sust-mix-pic-left {
         @media @tablet {
-            margin-bottom: 10%;
+            // margin-bottom: 10%;
         }
         @media @desktop {
-            float: left;
-            margin-bottom: 0;
+            // margin-bottom: 0;
+            clear:left;
         }
     }
     .sust-mix-words {
         @media @desktop {
-            padding:40px;
+            padding: 0 3%;
+        }
+        @media @XXLdesktop {
+            padding: 5%;
+        }
+        &:first-child {
+            @media @desktop {
+                // padding: 40px 40px 40px 5%;
+            }
         }
         &:last-child {
-            @media @tablet {
-                float: right;
+            @media @desktop {
+                // padding: 40px 5% 40px 40px;
             }
         }
     }
@@ -531,9 +546,10 @@ footer {
             margin-top: 10px;
             background: black;
             color: @white;
-            text-transform: capitalize; 
+            text-transform: uppercase; 
             border: black 3px solid;
             transition: all ease 0.3s;
+            font-family: @roboto;
             &:hover, 
             &:focus {
                 border: inset @white 3px;
@@ -541,10 +557,11 @@ footer {
             @media @desktop {
                 margin-top: 0;
                 width: 30%;
+                font-family: @buttonFF;
             }
         }
         @media @desktop {
-            width: 45%;
+            width: 50%;
             float:left;
             padding: 50px 0;
         }
